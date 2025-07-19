@@ -1,99 +1,55 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Agencia de Viajes</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: url('imagenes/principal.jpg') no-repeat center center fixed;
-      background-size: cover;
-      color: #fff;
-    }
-
-    header {
-      background-color: rgba(0, 0, 0, 0.6);
-      padding: 20px;
-      text-align: center;
-    }
-
-    nav a {
-      color: white;
-      margin: 0 15px;
-      text-decoration: none;
-    }
-
-    section {
-      padding: 40px;
-      background-color: rgba(0, 0, 0, 0.6);
-      margin: 20px;
-      border-radius: 8px;
-    }
-
-    form input, form textarea, form button {
-      width: 100%;
-      padding: 10px;
-      margin-top: 10px;
-      border: none;
-      border-radius: 5px;
-    }
-
-    form button {
-      background-color: #007BFF;
-      color: white;
-      cursor: pointer;
-    }
-
-    footer {
-      text-align: center;
-      padding: 20px;
-      background-color: rgba(0, 0, 0, 0.8);
-    }
-  </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Viajes sin edad</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-  <header>
-    <h1>Agencia de Viajes</h1>
-    <nav>
-      <a href="#inicio">Inicio</a>
-      <a href="#destinos">Destinos</a>
-      <a href="#contacto">Contacto</a>
-    </nav>
-  </header>
+ <header>
+  <img src="imagenes/logo.jpeg" alt="Logo Metzli Viajes" style="height: 60px;" />
+  <div>Nacional</div>
+  <div>Internacional</div>
+  <div>Lujo</div>
+  <div>Familiar</div>
+  <div><a href="#contacto" style="color: white; text-decoration: none;">Contacto</a></div>
+</header>
 
-  <section id="inicio">
-    <h2>Bienvenido</h2>
-    <p>Descubre el mundo con nosotros. Explora nuestros destinos increíbles y haz realidad tus sueños de viajar.</p>
-  </section>
 
-  <section id="destinos">
-    <h2>París</h2>
-    <img src="imagenes/pexels-chris-molloy-220084-1308940.jpg" alt="París" style="width:100%; border-radius: 8px; max-width: 600px;">
-    <p>La ciudad del amor te espera con su Torre Eiffel, arte, moda y gastronomía.</p>
+  <section class="hero">
+    <div class="column" style="background-image: url('imagenes/imagen1.jpg');"></div>
+    <div class="column" style="background-image: url('imagenes/imagen2.jpg');"></div>
+    <div class="column" style="background-image: url('imagenes/imagen3.jpg');"></div>
+
+    <div class="center-text">
+      <h1>El mundo es tuyo:<br>viajes sin edad,<br>experiencias sin límites</h1>
+      <button class="button" onclick="window.location.href='#destinos'">Explora Destinos</button>
+    </div>
   </section>
 
   <section id="contacto">
     <h2>Contacto</h2>
-    <form action="https://formspree.io/f/mjkovrel" method="POST">
-      <label for="nombre">Nombre:</label>
-      <input type="text" id="nombre" name="nombre" required>
-
-      <label for="email">Correo electrónico:</label>
-      <input type="email" id="email" name="_replyto" required>
-
-      <label for="mensaje">Mensaje:</label>
-      <textarea id="mensaje" name="mensaje" rows="5" required></textarea>
-
-      <button type="submit">Enviar</button>
+    <p>¿Tienes preguntas o deseas más información? ¡Contáctanos!</p>
+    <form action="#" method="post" class="formulario-contacto">
+      <div>
+        <input type="text" name="nombre" placeholder="Tu nombre" required>
+      </div>
+      <div>
+        <input type="email" name="email" placeholder="Tu correo electrónico" required>
+      </div>
+      <div>
+        <textarea name="mensaje" rows="5" placeholder="Escribe tu mensaje aquí..." required></textarea>
+      </div>
+      <div>
+        <button type="submit" class="submit-button">Enviar</button>
+      </div>
     </form>
   </section>
 
-  <footer>
-    <p>&copy; 2025 Agencia de Viajes. Todos los derechos reservados.</p>
-  </footer>
-
 </body>
 </html>
+
+
