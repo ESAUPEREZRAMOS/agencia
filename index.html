@@ -3,53 +3,54 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Viajes sin edad</title>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css" />
+  <title>Agencia de Viajes</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body {
+      font-family: 'Georgia', serif;
+    }
+  </style>
 </head>
-<body>
+<body class="bg-black text-white">
 
- <header>
-  <img src="imagenes/logo.jpeg" alt="Logo Metzli Viajes" style="height: 60px;" />
-  <div>Nacional</div>
-  <div>Internacional</div>
-  <div>Lujo</div>
-  <div>Familiar</div>
-  <div><a href="#contacto" style="color: white; text-decoration: none;">Contacto</a></div>
-</header>
+  <!-- Menú de navegación -->
+  <nav class="flex justify-center space-x-10 py-6 text-lg font-bold uppercase bg-opacity-50 z-10 relative">
+    <a href="#" class="hover:text-yellow-400">Nacional</a>
+    <a href="#" class="hover:text-yellow-400">Internacional</a>
+    <a href="#" class="hover:text-yellow-400">Lujo</a>
+    <a href="#" class="hover:text-yellow-400">Familiar</a>
+    <a href="#" class="hover:text-yellow-400">Contacto</a>
+  </nav>
 
+  <!-- Sección principal con 3 imágenes -->
+  <section class="grid grid-cols-1 md:grid-cols-3 h-screen">
 
-  <section class="hero">
-    <div class="column" style="background-image: url('imagenes/imagen1.jpg');"></div>
-    <div class="column" style="background-image: url('imagenes/imagen2.jpg');"></div>
-    <div class="column" style="background-image: url('imagenes/imagen3.jpg');"></div>
-
-    <div class="center-text">
-      <h1>El mundo es tuyo:<br>viajes sin edad,<br>experiencias sin límites</h1>
-      <button class="button" onclick="window.location.href='#destinos'">Explora Destinos</button>
+    <!-- Imagen 1: Naturaleza -->
+    <div class="relative">
+      <img src="img/imagen2.jpg" alt="Naturaleza" class="w-full h-full object-cover" />
     </div>
-  </section>
 
-  <section id="contacto">
-    <h2>Contacto</h2>
-    <p>¿Tienes preguntas o deseas más información? ¡Contáctanos!</p>
-    <form action="#" method="post" class="formulario-contacto">
-      <div>
-        <input type="text" name="nombre" placeholder="Tu nombre" required>
+    <!-- Imagen 2: Ciudad con texto encima -->
+    <div class="relative flex items-center justify-center bg-black bg-opacity-50">
+      <img src="img/imagen1.jpg" alt="Ciudad" class="w-full h-full object-cover absolute inset-0 z-0" />
+      <div class="relative z-10 text-center p-8">
+        <h1 class="text-4xl md:text-5xl font-bold mb-6 leading-tight">
+          El mundo es tuyo:<br />
+          <span class="block mt-2">viajes sin edad,</span>
+          <span class="block">experiencias sin límites</span>
+        </h1>
+        <a href="#" class="bg-yellow-500 hover:bg-yellow-600 text-white py-3 px-6 rounded-lg text-lg transition">
+          Explora Destinos
+        </a>
       </div>
-      <div>
-        <input type="email" name="email" placeholder="Tu correo electrónico" required>
-      </div>
-      <div>
-        <textarea name="mensaje" rows="5" placeholder="Escribe tu mensaje aquí..." required></textarea>
-      </div>
-      <div>
-        <button type="submit" class="submit-button">Enviar</button>
-      </div>
-    </form>
+    </div>
+
+    <!-- Imagen 3: Tren -->
+    <div class="relative">
+      <img src="img/imagen3.jpg" alt="Tren" class="w-full h-full object-cover" />
+    </div>
+
   </section>
 
 </body>
 </html>
-
-
