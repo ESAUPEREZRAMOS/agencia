@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Agencia de Viajes</title>
+  <title>Metzli Viajes</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
     body {
@@ -13,13 +13,23 @@
 </head>
 <body class="bg-black text-white">
 
-  <!-- Menú de navegación -->
-  <nav class="flex justify-center space-x-10 py-6 text-lg font-bold uppercase bg-opacity-50 z-10 relative">
-    <a href="#" class="hover:text-yellow-400">Nacional</a>
-    <a href="#" class="hover:text-yellow-400">Internacional</a>
-    <a href="#" class="hover:text-yellow-400">Lujo</a>
-    <a href="#" class="hover:text-yellow-400">Familiar</a>
-    <a href="#" class="hover:text-yellow-400">Contacto</a>
+  <!-- Menú de navegación con logo a la izquierda -->
+  <nav class="flex items-center justify-between px-6 py-4 text-lg font-bold uppercase relative z-10 bg-black bg-opacity-70">
+    
+    <!-- Logo a la izquierda -->
+    <div class="w-28">
+      <img src="imagenes/logo.jpeg" alt="Metzli Viajes" class="w-full h-auto object-contain" />
+    </div>
+
+    <!-- Enlaces del menú -->
+    <div class="flex space-x-6 text-white">
+      <a href="#" class="hover:text-yellow-400">Nacional</a>
+      <a href="#" class="hover:text-yellow-400">Internacional</a>
+      <a href="#" class="hover:text-yellow-400">Lujo</a>
+      <a href="#" class="hover:text-yellow-400">Familiar</a>
+      <a href="#" class="hover:text-yellow-400">Contacto</a>
+    </div>
+
   </nav>
 
   <!-- Sección principal con 3 imágenes -->
@@ -34,7 +44,7 @@
     <div class="relative flex items-center justify-center bg-black bg-opacity-50">
       <img src="imagenes/imagen2.jpg" alt="Imagen 2" class="w-full h-full object-cover absolute inset-0 z-0" />
       <div class="relative z-10 text-center p-8">
-        <h1 class="text-4xl md:text-5xl font-bold mb-6 leading-tight">
+        <h1 class="text-2xl md:text-3xl font-bold mb-6 leading-tight">
           El mundo es tuyo:<br />
           <span class="block mt-2">viajes sin edad,</span>
           <span class="block">experiencias sin límites</span>
