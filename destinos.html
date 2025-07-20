@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Destinos - Metzli Viajes</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+  </style>
+</head>
+<body class="bg-black text-white">
+
+  <!-- Botón volver al inicio -->
+  <div class="absolute top-4 left-4 z-50">
+    <a href="index.html" class="text-white bg-gray-800 hover:bg-gray-700 px-4 py-2 rounded-full text-sm font-semibold shadow-md transition">
+      ← Volver al inicio
+    </a>
+  </div>
+
+  <!-- Menú superior -->
+  <nav class="bg-black text-white px-4 py-3 shadow-md sticky top-0 z-40">
+    <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-4 sm:gap-8">
+      <div class="text-lg font-bold tracking-wide uppercase">Menú de Destinos</div>
+      <div class="flex gap-4 text-sm font-medium">
+        <a href="#nacional" class="hover:text-yellow-400 transition">Nacional</a>
+        <a href="#internacional" class="hover:text-yellow-400 transition">Internacional</a>
+        <a href="#lujo" class="hover:text-yellow-400 transition">Lujo</a>
+        <a href="#familiar" class="hover:text-yellow-400 transition">Familiar</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Logo y botón explorar -->
+  <div class="flex flex-col items-center justify-center text-center py-12 px-4">
+    <img src="imagenes/logo.jpeg" alt="Logo Metzli" class="w-32 mb-4">
+    <button class="bg-yellow-400 text-black font-semibold px-6 py-3 rounded-full hover:bg-yellow-500 transition">
+      Explora destinos
+    </button>
+  </div>
+
+  <!-- Sección Nacional - CHIHUAHUA -->
+  <section id="nacional" class="bg-white text-black py-10 px-6">
+    <div class="max-w-6xl mx-auto">
+      <h2 class="text-2xl sm:text-3xl font-bold mb-6">Chihuahua: Aventura de Lujo en las Barrancas del Cobre</h2>
+      <div class="grid md:grid-cols-2 gap-6">
+        <div>
+          <img src="imagenes/chihuahua.jpg" alt="Tren Chepe" class="rounded-lg shadow-md">
+        </div>
+        <div>
+          <p class="mb-4"><strong>Destino:</strong> Las majestuosas sierras naturales de México combinando paisajes imponentes, aventura y naturaleza con lujo.</p>
+          <p class="mb-4"><strong>Incluye:</strong></p>
+          <ul class="list-disc list-inside mb-4">
+            <li>Vuelos en línea</li>
+            <li>Tren Chepe Express Clase Turista</li>
+            <li>4 noches en hoteles 4★</li>
+            <li>Traslados aeropuerto-hotel-tren</li>
+            <li>Visitas a Lago de Arareco, Parque de Aves, etc.</li>
+            <li>4 desayunos y 1 cena</li>
+          </ul>
+          <p class="mb-4"><strong>Itinerario:</strong></p>
+          <ul class="list-disc list-inside">
+            <li><strong>Día 1:</strong> Vuelo a Chihuahua, City Tour, Catedral, Museo Pancho Villa</li>
+            <li><strong>Día 2:</strong> Tren a Creel, excursión al Lago de Arareco</li>
+            <li><strong>Día 3:</strong> Tren a Divisadero</li>
+            <li><strong>Día 4:</strong> Regreso a Chihuahua</li>
+          </ul>
+          <p class="mt-4"><strong>Costo estimado:</strong> $19,500 MXN + $3,500 MXN (opciones desde $1,500 MXN)</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Secciones futuras -->
+  <section id="internacional" class="py-12 px-6 text-center">
+    <h2 class="text-2xl font-bold mb-4">Internacional</h2>
+    <p>Próximamente...</p>
+  </section>
+
+  <section id="lujo" class="py-12 px-6 text-center">
+    <h2 class="text-2xl font-bold mb-4">Lujo</h2>
+    <p>Próximamente...</p>
+  </section>
+
+  <section id="familiar" class="py-12 px-6 text-center">
+    <h2 class="text-2xl font-bold mb-4">Familiar</h2>
+    <p>Próximamente...</p>
+  </section>
+
+</body>
+</html>
