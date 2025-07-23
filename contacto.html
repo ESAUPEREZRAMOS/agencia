@@ -39,6 +39,15 @@
     <div class="max-w-3xl mx-auto">
       <h2 class="text-3xl font-bold text-center mb-8">Contáctanos</h2>
 
+      <!-- NUEVO: Correo visible con enlace mailto -->
+      <p class="text-center text-gray-300 mb-6">
+        <i class="fas fa-envelope text-yellow-400 mr-2"></i>
+        Escríbenos a:
+        <a href="mailto:contacto@metzliviajes.com" class="text-yellow-400 hover:underline">
+          contacto@metzliviajes.com
+        </a>
+      </p>
+
       <!-- FORMULARIO -->
       <form id="formulario" action="https://formspree.io/f/mjkovrel" method="POST" class="space-y-6">
         <div>
@@ -73,6 +82,13 @@
             <i class="fab fa-whatsapp text-xl"></i>
             Enviar por WhatsApp
           </button>
+
+          <!-- Enlace a Instagram -->
+          <a href="https://instagram.com/metzliviajes" target="_blank"
+             class="bg-pink-600 hover:bg-pink-700 text-white font-semibold py-3 px-8 rounded-lg transition flex items-center gap-2">
+            <i class="fab fa-instagram text-xl"></i>
+            Ir a Instagram
+          </a>
         </div>
       </form>
 
@@ -126,34 +142,34 @@
 
     // WHATSAPP
     document.getElementById('whatsappBtn').addEventListener('click', function () {
-    const nombre = document.getElementById('nombre').value;
-    const email = document.getElementById('email').value;
-    const mensaje = document.getElementById('mensaje').value;
-    const mensajeError = document.getElementById('mensaje-error');
+      const nombre = document.getElementById('nombre').value;
+      const email = document.getElementById('email').value;
+      const mensaje = document.getElementById('mensaje').value;
+      const mensajeError = document.getElementById('mensaje-error');
 
-    if (!nombre || !email || !mensaje) {
-      mensajeError.textContent = 'Por favor completa todos los campos antes de enviar por WhatsApp.';
-      mensajeError.classList.remove('hidden');
-      setTimeout(() => mensajeError.classList.add('hidden'), 5000);
-      return;
-    }
-
-    const texto = `Hola, soy ${nombre}. Mi correo es ${email}.%0A%0AMensaje:%0A${encodeURIComponent(mensaje)}`;
-    const numeroDestino = "525514769815"; // <-- Reemplaza con tu número real
-
-    const url = `https://wa.me/${numeroDestino}?text=${texto}`;
-
-    try {
-      const win = window.open(url, '_blank');
-      if (!win || win.closed || typeof win.closed == 'undefined') {
-        throw new Error("No se pudo abrir WhatsApp.");
+      if (!nombre || !email || !mensaje) {
+        mensajeError.textContent = 'Por favor completa todos los campos antes de enviar por WhatsApp.';
+        mensajeError.classList.remove('hidden');
+        setTimeout(() => mensajeError.classList.add('hidden'), 5000);
+        return;
       }
-    } catch (error) {
-      mensajeError.textContent = 'No se pudo abrir WhatsApp. Asegúrate de tener conexión o una app compatible.';
-      mensajeError.classList.remove('hidden');
-      setTimeout(() => mensajeError.classList.add('hidden'), 5000);
-    }
-  });
+
+      const texto = `Hola, soy ${nombre}. Mi correo es ${email}.%0A%0AMensaje:%0A${encodeURIComponent(mensaje)}`;
+      const numeroDestino = "525514769815";
+
+      const url = `https://wa.me/${numeroDestino}?text=${texto}`;
+
+      try {
+        const win = window.open(url, '_blank');
+        if (!win || win.closed || typeof win.closed == 'undefined') {
+          throw new Error("No se pudo abrir WhatsApp.");
+        }
+      } catch (error) {
+        mensajeError.textContent = 'No se pudo abrir WhatsApp. Asegúrate de tener conexión o una app compatible.';
+        mensajeError.classList.remove('hidden');
+        setTimeout(() => mensajeError.classList.add('hidden'), 5000);
+      }
+    });
   </script>
 
 </body>
