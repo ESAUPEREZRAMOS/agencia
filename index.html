@@ -6,6 +6,7 @@
   <title>Metzli Viajes</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
   <style>
     body {
       font-family: 'Georgia', serif;
@@ -17,17 +18,12 @@
   <!-- NAV -->
   <nav class="bg-black bg-opacity-90 px-4 py-4 sm:px-6 relative">
     <div class="flex items-center justify-between">
-      <!-- Logo -->
       <div class="w-24">
         <img src="imagenes/logo.jpeg" alt="Metzli Viajes" class="w-full h-auto object-contain" />
       </div>
-
-      <!-- Botón hamburguesa (móvil) -->
       <button id="menu-btn" class="sm:hidden text-white text-2xl focus:outline-none">
         <i class="fas fa-bars"></i>
       </button>
-
-      <!-- Menú (escritorio) -->
       <div class="hidden sm:flex space-x-6 text-sm font-semibold uppercase">
         <a href="#" class="hover:text-yellow-400">Inicio</a>
         <a href="destinos.html" class="hover:text-yellow-400">Destinos</a>
@@ -35,8 +31,6 @@
         <a href="contacto.html" target="_blank" class="hover:text-yellow-400">Contacto</a>
       </div>
     </div>
-
-    <!-- Menú desplegable (móvil) -->
     <div id="mobile-menu" class="hidden sm:hidden mt-4 flex flex-col space-y-3 text-center text-sm font-semibold uppercase">
       <a href="#" class="hover:text-yellow-400">Inicio</a>
       <a href="destinos.html" class="hover:text-yellow-400">Destinos</a>
@@ -47,17 +41,12 @@
 
   <!-- PORTADA -->
   <section class="relative w-full h-[80vh] sm:h-[90vh] overflow-hidden">
-    <!-- Imágenes en fondo -->
     <div class="absolute inset-0 grid grid-cols-1 sm:grid-cols-3">
       <img src="imagenes/imagen1.jpg" alt="Imagen 1" class="w-full h-full object-cover" />
       <img src="imagenes/imagen2.jpg" alt="Imagen 2" class="w-full h-full object-cover" />
       <img src="imagenes/imagen3.jpg" alt="Imagen 3" class="w-full h-full object-cover" />
     </div>
-
-    <!-- Capa oscura -->
     <div class="absolute inset-0 bg-black bg-opacity-60"></div>
-
-    <!-- Texto centrado -->
     <div class="relative z-10 flex flex-col items-center justify-center text-center h-full px-4">
       <h1 class="text-xl sm:text-3xl font-semibold text-white leading-tight">
         El mundo es tuyo:<br />
@@ -66,14 +55,95 @@
       </h1>
     </div>
   </section>
+<!-- QUIÉNES SOMOS -->
+<section class="py-16 px-4 sm:px-20 bg-black text-white">
+  <div class="max-w-5xl mx-auto text-center">
+    <h2 class="text-2xl sm:text-3xl font-bold text-yellow-400 mb-6">¿Quiénes somos?</h2>
 
-  <!-- GALERÍA -->
+    <div class="relative group bg-gray-800 rounded-xl overflow-hidden shadow-lg transition-all duration-500 ease-in-out cursor-pointer h-32 group-hover:h-[600px] sm:h-40 sm:group-hover:h-[600px]">
+      <!-- Texto visible antes del hover -->
+      <div class="p-6">
+        <p class="text-lg">Más sobre Metzli Viajes</p>
+      </div>
+
+      <!-- Contenido oculto, aparece al hacer hover -->
+      <div class="absolute inset-0 bg-black bg-opacity-90 text-left text-sm sm:text-base px-6 py-8 overflow-y-auto opacity-0 group-hover:opacity-100 transition-opacity duration-500 ease-in-out">
+        <p class="mb-4"><strong>Nuestra Razón de Ser - Metzli Viajes</strong></p>
+        <p class="mb-4">En Metzli viajes creemos que viajar es más que trasladarse; es transformarse. Nuestra razón de ser es diseñar experiencias auténticas, responsables y memorables, cuidando cada detalle para que cada viajero se conecte con el destino de una forma consciente, segura y enriquecedora.</p>
+        
+        <p class="mb-2"><strong>Con el Viajero</strong></p>
+        <p class="mb-4">Nos comprometemos a brindar a cada persona una experiencia única, donde el confort, la cultura y la emoción se encuentren en armonía. Viajamos contigo, no solo como guías, sino como cómplices de cada aventura que transforma tu visión del mundo.</p>
+
+        <p class="mb-2"><strong>Con el Ecosistema</strong></p>
+        <p class="mb-4">Sabemos que los paisajes que visitamos son frágiles y valiosos. Por eso, trabajamos bajo un modelo de turismo sustentable, minimizando nuestra huella ecológica, promoviendo prácticas responsables y apoyando iniciativas que protejan la biodiversidad de nuestro país.</p>
+
+        <p class="mb-2"><strong>Con la Cultura</strong></p>
+        <p class="mb-4">Cada viaje es una oportunidad para reconocer, respetar y celebrar la diversidad cultural de México y del mundo. Nos esforzamos por crear experiencias que valoren las tradiciones, lenguas, saberes y formas de vida de las comunidades anfitrionas.</p>
+
+        <p class="mb-2"><strong>Con los Destinos turísticos y no turísticos</strong></p>
+        <p class="mb-4">Colaboramos con proveedores locales, artesanos, guías comunitarios y emprendimientos regionales para impulsar el desarrollo económico justo y preservar la autenticidad de cada sitio. Porque el turismo también puede construir futuro sin alterar el pasado.</p>
+
+        <p class="mb-2"><strong>Con nuestro México</strong></p>
+        <p>Somos orgullosamente una agencia mexicana que promueve el conocimiento, la valoración y la exploración de nuestro país. Buscamos que cada viajero regrese no solo con fotos, sino con una conexión más profunda con México y el compromiso de protegerlo.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+  <!-- NUESTROS DESTINOS -->
   <section class="py-16 px-4 sm:px-20 bg-black">
     <h2 class="text-2xl sm:text-3xl font-bold text-center mb-10 text-yellow-400">Nuestros destinos</h2>
-    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-      <img src="imagenes/imagen6.jpg" alt="Imagen 1" class="w-full h-auto object-cover rounded-xl shadow-md" />
-      <img src="imagenes/imagen5.jpg" alt="Imagen 2" class="w-full h-auto object-cover rounded-xl shadow-md" />
-      <img src="imagenes/imagen4.jpg" alt="Imagen 3" class="w-full h-auto object-cover rounded-xl shadow-md" />
+
+    <!-- EL CHEPE -->
+    <div class="mb-16 text-center">
+      <h3 class="text-2xl sm:text-3xl font-bold mb-4">El CHEPE</h3>
+      <div class="swiper mySwiperChepe max-w-4xl mx-auto">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide"><img src="imagenes/elchepe1.jpg" class="w-full h-96 object-cover rounded-xl" /></div>
+          <div class="swiper-slide"><img src="imagenes/elchepe2.jpg" class="w-full h-96 object-cover rounded-xl" /></div>
+          <div class="swiper-slide"><img src="imagenes/elchepe3.jpg" class="w-full h-96 object-cover rounded-xl" /></div>
+        </div>
+      </div>
+      <div class="mt-6">
+        <a href="destinos.html#elchepe" class="bg-yellow-500 text-black px-6 py-2 rounded-full hover:bg-yellow-400 transition">
+          Más información
+        </a>
+      </div>
+    </div>
+
+    <!-- RIVIERA MAYA -->
+    <div class="mb-16 text-center">
+      <h3 class="text-2xl sm:text-3xl font-bold mb-4">Riviera Maya</h3>
+      <div class="swiper mySwiperRiviera max-w-4xl mx-auto">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide"><img src="imagenes/riveramaya1.jpg" class="w-full h-96 object-cover rounded-xl" /></div>
+          <div class="swiper-slide"><img src="imagenes/riveramaya2.jpg" class="w-full h-96 object-cover rounded-xl" /></div>
+          <div class="swiper-slide"><img src="imagenes/riveramaya3.jpg" class="w-full h-96 object-cover rounded-xl" /></div>
+        </div>
+      </div>
+      <div class="mt-6">
+        <a href="destinos.html#riviera" class="bg-yellow-500 text-black px-6 py-2 rounded-full hover:bg-yellow-400 transition">
+          Más información
+        </a>
+      </div>
+    </div>
+
+    <!-- OTROS DESTINOS -->
+    <div class="mb-16 text-center">
+      <h3 class="text-2xl sm:text-3xl font-bold mb-4">Otros destinos</h3>
+      <div class="swiper mySwiperOtros max-w-4xl mx-auto">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide"><img src="imagenes/imagen6.jpg" class="w-full h-96 object-cover rounded-xl" /></div>
+          <div class="swiper-slide"><img src="imagenes/imagen5.jpg" class="w-full h-96 object-cover rounded-xl" /></div>
+          <div class="swiper-slide"><img src="imagenes/imagen4.jpg" class="w-full h-96 object-cover rounded-xl" /></div>
+        </div>
+      </div>
+      <div class="mt-6">
+        <a href="destinos.html#otros" class="bg-yellow-500 text-black px-6 py-2 rounded-full hover:bg-yellow-400 transition">
+          Más información
+        </a>
+      </div>
     </div>
   </section>
 
@@ -83,24 +153,35 @@
       <h3 class="text-2xl font-bold text-yellow-600">Galería</h3>
       <div class="flex flex-col items-center gap-3 text-lg">
         <a href="galeria-nacional.html" class="flex items-center gap-2 hover:text-yellow-600">
-          <i class="fas fa-map-marker-alt text-yellow-600"></i>
-          <span>Nacional</span>
+          <i class="fas fa-map-marker-alt text-yellow-600"></i><span>Nacional</span>
         </a>
-        <a href="galeria-internacional.html" class="flex items-center gap-2 hover:text-yellow-600">
-          <i class="fas fa-globe-americas text-yellow-600"></i>
-          <span>Internacional</span>
+          <!-- <a href="galeria-internacional.html" class="...">Internacional</a> -->
+
+        <!-- <a href="galeria-internacional.html" class="flex items-center gap-2 hover:text-yellow-600">
+          <i class="fas fa-globe-americas text-yellow-600"></i><span>Internacional</span>
         </a>
         <a href="galeria-lujo.html" class="flex items-center gap-2 hover:text-yellow-600">
-          <i class="fas fa-gem text-yellow-600"></i>
-          <span>Lujo</span>
+          <i class="fas fa-gem text-yellow-600"></i><span>Lujo</span>
         </a>
         <a href="galeria-familiar.html" class="flex items-center gap-2 hover:text-yellow-600">
-          <i class="fas fa-users text-yellow-600"></i>
-          <span>Familiar</span>
-        </a>
+          <i class="fas fa-users text-yellow-600"></i><span>Familiar</span>
+        </a>-->
       </div>
       <button id="cerrar-modal" class="mt-4 text-sm text-red-600 hover:underline">Cerrar</button>
     </div>
+  </div>
+<!-- BOTÓN DE CONTACTO -->
+<div class="text-center py-6">
+  <a href="contacto.html" class="bg-yellow-500 text-black px-6 py-2 rounded-full text-sm font-semibold shadow-md hover:bg-yellow-400 transition">
+    Contacto
+  </a>
+</div>
+
+  <!-- BOTÓN VOLVER AL INICIO (parte inferior) -->
+  <div class="text-center py-10">
+    <a href="#" class="bg-gray-800 hover:bg-gray-700 text-white px-6 py-2 rounded-full text-sm font-semibold shadow-md transition">
+      ← Volver al inicio
+    </a>
   </div>
 
   <!-- FOOTER -->
@@ -108,33 +189,46 @@
     &copy; 2025 Metzli Viajes. Todos los derechos reservados.
   </footer>
 
-  <!-- Scripts -->
+  <!-- SCRIPTS -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
   <script>
     // Menú hamburguesa
-    const menuBtn = document.getElementById('menu-btn');
-    const mobileMenu = document.getElementById('mobile-menu');
-    menuBtn.addEventListener('click', () => {
-      mobileMenu.classList.toggle('hidden');
+    document.getElementById('menu-btn')?.addEventListener('click', () => {
+      document.getElementById('mobile-menu')?.classList.toggle('hidden');
     });
 
-    // Modal Galería
-    const galeriaBtn = document.getElementById('galeria-btn');
-    const galeriaBtnM = document.getElementById('galeria-btn-m');
-    const modal = document.getElementById('galeria-modal');
-    const cerrarModal = document.getElementById('cerrar-modal');
-
-    galeriaBtn?.addEventListener('click', (e) => {
+    // Modal galería
+    document.getElementById('galeria-btn')?.addEventListener('click', (e) => {
       e.preventDefault();
-      modal.classList.remove('hidden');
+      document.getElementById('galeria-modal').classList.remove('hidden');
     });
 
-    galeriaBtnM?.addEventListener('click', (e) => {
+    document.getElementById('galeria-btn-m')?.addEventListener('click', (e) => {
       e.preventDefault();
-      modal.classList.remove('hidden');
+      document.getElementById('galeria-modal').classList.remove('hidden');
     });
 
-    cerrarModal.addEventListener('click', () => {
-      modal.classList.add('hidden');
+    document.getElementById('cerrar-modal')?.addEventListener('click', () => {
+      document.getElementById('galeria-modal').classList.add('hidden');
+    });
+
+    // Swipers
+    new Swiper(".mySwiperChepe", {
+      loop: true,
+      autoplay: { delay: 3000 },
+      slidesPerView: 1,
+    });
+
+    new Swiper(".mySwiperRiviera", {
+      loop: true,
+      autoplay: { delay: 3000 },
+      slidesPerView: 1,
+    });
+
+    new Swiper(".mySwiperOtros", {
+      loop: true,
+      autoplay: { delay: 3000 },
+      slidesPerView: 1,
     });
   </script>
 </body>
