@@ -29,48 +29,47 @@
 
       <!-- Menú (escritorio) -->
       <div class="hidden sm:flex space-x-6 text-sm font-semibold uppercase">
-       <a href="#" class="hover:text-yellow-400">Inicio</a>
-       <a href="destinos.html" class="hover:text-yellow-400">Destinos</a>
-       <a href="contacto.html" target="_blank" class="hover:text-yellow-400">Contacto</a>
+        <a href="#" class="hover:text-yellow-400">Inicio</a>
+        <a href="destinos.html" class="hover:text-yellow-400">Destinos</a>
+        <a href="#" id="galeria-btn" class="hover:text-yellow-400">Galería</a>
+        <a href="contacto.html" target="_blank" class="hover:text-yellow-400">Contacto</a>
+      </div>
     </div>
+
     <!-- Menú desplegable (móvil) -->
     <div id="mobile-menu" class="hidden sm:hidden mt-4 flex flex-col space-y-3 text-center text-sm font-semibold uppercase">
-     <a href="#" class="hover:text-yellow-400">Inicio</a>
-     <a href="destinos.html" class="hover:text-yellow-400">Destinos</a>
-     <a href="contacto.html" target="_blank" class="hover:text-yellow-400">Contacto</a>
+      <a href="#" class="hover:text-yellow-400">Inicio</a>
+      <a href="destinos.html" class="hover:text-yellow-400">Destinos</a>
+      <a href="#" id="galeria-btn-m" class="hover:text-yellow-400">Galería</a>
+      <a href="contacto.html" target="_blank" class="hover:text-yellow-400">Contacto</a>
     </div>
   </nav>
 
   <!-- PORTADA -->
-  <!-- PORTADA -->
-<!-- PORTADA con texto sobre imágenes -->
-<!-- PORTADA con texto blanco más pequeño sobre imágenes -->
-<section class="relative w-full h-[80vh] sm:h-[90vh] overflow-hidden">
-  <!-- Imágenes en fondo -->
-  <div class="absolute inset-0 grid grid-cols-1 sm:grid-cols-3">
-    <img src="imagenes/imagen1.jpg" alt="Imagen 1" class="w-full h-full object-cover" />
-    <img src="imagenes/imagen2.jpg" alt="Imagen 2" class="w-full h-full object-cover" />
-    <img src="imagenes/imagen3.jpg" alt="Imagen 3" class="w-full h-full object-cover" />
-  </div>
+  <section class="relative w-full h-[80vh] sm:h-[90vh] overflow-hidden">
+    <!-- Imágenes en fondo -->
+    <div class="absolute inset-0 grid grid-cols-1 sm:grid-cols-3">
+      <img src="imagenes/imagen1.jpg" alt="Imagen 1" class="w-full h-full object-cover" />
+      <img src="imagenes/imagen2.jpg" alt="Imagen 2" class="w-full h-full object-cover" />
+      <img src="imagenes/imagen3.jpg" alt="Imagen 3" class="w-full h-full object-cover" />
+    </div>
 
-  <!-- Capa oscura -->
-  <div class="absolute inset-0 bg-black bg-opacity-60"></div>
+    <!-- Capa oscura -->
+    <div class="absolute inset-0 bg-black bg-opacity-60"></div>
 
-  <!-- Texto centrado -->
-  <div class="relative z-10 flex flex-col items-center justify-center text-center h-full px-4">
-    <h1 class="text-xl sm:text-3xl font-semibold text-white leading-tight">
-      El mundo es tuyo:<br />
-      viajes sin edad,<br />
-      experiencias sin límites
-    </h1>
-  </div>
-</section>
-
+    <!-- Texto centrado -->
+    <div class="relative z-10 flex flex-col items-center justify-center text-center h-full px-4">
+      <h1 class="text-xl sm:text-3xl font-semibold text-white leading-tight">
+        El mundo es tuyo:<br />
+        viajes sin edad,<br />
+        experiencias sin límites
+      </h1>
+    </div>
+  </section>
 
   <!-- GALERÍA -->
   <section class="py-16 px-4 sm:px-20 bg-black">
     <h2 class="text-2xl sm:text-3xl font-bold text-center mb-10 text-yellow-400">Nuestros destinos</h2>
-
     <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
       <img src="imagenes/imagen6.jpg" alt="Imagen 1" class="w-full h-auto object-cover rounded-xl shadow-md" />
       <img src="imagenes/imagen5.jpg" alt="Imagen 2" class="w-full h-auto object-cover rounded-xl shadow-md" />
@@ -78,18 +77,64 @@
     </div>
   </section>
 
+  <!-- MODAL GALERÍA -->
+  <div id="galeria-modal" class="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center z-50 hidden">
+    <div class="bg-white text-black rounded-xl p-4 max-w-sm w-full text-center space-y-4">
+      <h3 class="text-2xl font-bold text-yellow-600">Galería</h3>
+      <div class="flex flex-col items-center gap-3 text-lg">
+        <a href="galeria-nacional.html" class="flex items-center gap-2 hover:text-yellow-600">
+          <i class="fas fa-map-marker-alt text-yellow-600"></i>
+          <span>Nacional</span>
+        </a>
+        <a href="galeria-internacional.html" class="flex items-center gap-2 hover:text-yellow-600">
+          <i class="fas fa-globe-americas text-yellow-600"></i>
+          <span>Internacional</span>
+        </a>
+        <a href="galeria-lujo.html" class="flex items-center gap-2 hover:text-yellow-600">
+          <i class="fas fa-gem text-yellow-600"></i>
+          <span>Lujo</span>
+        </a>
+        <a href="galeria-familiar.html" class="flex items-center gap-2 hover:text-yellow-600">
+          <i class="fas fa-users text-yellow-600"></i>
+          <span>Familiar</span>
+        </a>
+      </div>
+      <button id="cerrar-modal" class="mt-4 text-sm text-red-600 hover:underline">Cerrar</button>
+    </div>
+  </div>
+
   <!-- FOOTER -->
   <footer class="text-center text-sm text-gray-400 py-6 bg-black">
     &copy; 2025 Metzli Viajes. Todos los derechos reservados.
   </footer>
 
-  <!-- Script menú hamburguesa -->
+  <!-- Scripts -->
   <script>
+    // Menú hamburguesa
     const menuBtn = document.getElementById('menu-btn');
     const mobileMenu = document.getElementById('mobile-menu');
-
     menuBtn.addEventListener('click', () => {
       mobileMenu.classList.toggle('hidden');
+    });
+
+    // Modal Galería
+    const galeriaBtn = document.getElementById('galeria-btn');
+    const galeriaBtnM = document.getElementById('galeria-btn-m');
+    const modal = document.getElementById('galeria-modal');
+    const cerrarModal = document.getElementById('cerrar-modal');
+
+    galeriaBtn?.addEventListener('click', (e) => {
+      e.preventDefault();
+      modal.classList.remove('hidden');
+    });
+
+    galeriaBtnM?.addEventListener('click', (e) => {
+      e.preventDefault();
+      modal.classList.remove('hidden');
+    });
+
+    cerrarModal.addEventListener('click', () => {
+      modal.classList.add('hidden');
     });
   </script>
 </body>
