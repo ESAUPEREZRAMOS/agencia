@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -5,120 +6,143 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Destinos - Metzli Viajes</title>
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-  <style>
-    html {
-      scroll-behavior: smooth;
-    }
-  </style>
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+  <style>html { scroll-behavior: smooth; }</style>
 </head>
 <body class="bg-black text-white">
 
-  <!-- Botón volver al inicio -->
-  <div class="absolute top-4 left-4 z-50">
-    <a href="index.html" class="text-white bg-gray-800 hover:bg-gray-700 px-4 py-2 rounded-full text-sm font-semibold shadow-md transition">
-      ← Volver al inicio
-    </a>
-  </div>
-
-  <!-- Menú superior -->
-  <nav class="bg-black text-white px-4 py-3 shadow-md sticky top-0 z-40">
-    <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-4 sm:gap-8">
-      <div class="text-lg font-bold tracking-wide uppercase">Menú de Destinos</div>
-      <div class="flex gap-4 text-sm font-medium">
-        <a href="#nacional" class="hover:text-yellow-400 transition">Nacional</a>
-        <a href="#internacional" class="hover:text-yellow-400 transition">Internacional</a>
-        <a href="#lujo" class="hover:text-yellow-400 transition">Lujo</a>
-        <a href="#familiar" class="hover:text-yellow-400 transition">Familiar</a>
-      </div>
+<!-- NAVBAR -->
+<nav class="bg-black text-white px-4 py-3 shadow-md sticky top-0 z-40">
+  <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-4 sm:gap-8">
+    <div class="text-lg font-bold tracking-wide uppercase">Menú de Destinos</div>
+    <div class="flex gap-4 text-sm font-medium">
+      <a href="#elchepe" class="hover:text-yellow-400 transition">El Chepe</a>
+      <a href="#riviera" class="hover:text-yellow-400 transition">Riviera Maya</a>
+      <!--<a href="#otros" class="hover:text-yellow-400 transition">Otros</a>
+      <a href="#internacional" class="hover:text-yellow-400 transition">Internacional</a>
+      <a href="#lujo" class="hover:text-yellow-400 transition">Lujo</a>
+      <a href="#familiar" class="hover:text-yellow-400 transition">Familiar</a>-->
     </div>
-  </nav>
-
-  <!-- Logo y botón explorar -->
-  <div class="flex flex-col items-center justify-center text-center py-12 px-4">
-    <img src="imagenes/logo.jpeg" alt="Logo Metzli" class="w-32 mb-4">
-    <button class="bg-yellow-400 text-black font-semibold px-6 py-3 rounded-full hover:bg-yellow-500 transition">
-      Explora destinos
-    </button>
   </div>
+</nav>
 
-  <!-- Sección Nacional - CHIHUAHUA -->
-  <section id="nacional" class="bg-white text-black py-10 px-6">
-    <div class="max-w-6xl mx-auto">
-      <h2 class="text-2xl sm:text-3xl font-bold mb-6">Chihuahua: Aventura de Lujo en las Barrancas del Cobre</h2>
-      <div class="grid md:grid-cols-2 gap-6">
-        <div>
-          <img src="imagenes/chihuahua.jpg" alt="Tren Chepe" class="rounded-lg shadow-md">
-        </div>
-        <div>
-          <p class="mb-4"><strong>Destino:</strong> Las majestuosas sierras naturales de México combinando paisajes imponentes, aventura y naturaleza con lujo.</p>
-          <p class="mb-4"><strong>Incluye:</strong></p>
-          <ul class="list-disc list-inside mb-4">
-            <li>Vuelos en línea</li>
-            <li>Tren Chepe Express Clase Turista</li>
-            <li>4 noches en hoteles 4★</li>
-            <li>Traslados aeropuerto-hotel-tren</li>
-            <li>Visitas a Lago de Arareco, Parque de Aves, etc.</li>
-            <li>4 desayunos y 1 cena</li>
-          </ul>
-          <p class="mb-4"><strong>Itinerario:</strong></p>
-          <ul class="list-disc list-inside">
-            <li><strong>Día 1:</strong> Vuelo a Chihuahua, City Tour, Catedral, Museo Pancho Villa</li>
-            <li><strong>Día 2:</strong> Tren a Creel, excursión al Lago de Arareco</li>
-            <li><strong>Día 3:</strong> Tren a Divisadero</li>
-            <li><strong>Día 4:</strong> Regreso a Chihuahua</li>
-          </ul>
-          <p class="mt-4"><strong>Costo estimado:</strong> $19,500 MXN + $3,500 MXN (opciones desde $1,500 MXN)</p>
-        </div>
-      </div>
-    </div>
-  </section>
-<!-- Sección Nacional - RIVIERA MAYA -->
-<section class="bg-white text-black py-10 px-6">
+<!-- LOGO + BOTÓN EXPLORA DESTINOS -->
+<div class="flex flex-col items-center justify-center text-center py-12 px-4 relative">
+  <img src="imagenes/logo.jpeg" alt="Logo Metzli" class="w-32 mb-4">
+  <button id="explorarBtn" class="bg-yellow-400 text-black font-semibold px-6 py-3 rounded-full hover:bg-yellow-500 transition">
+    Explora destinos
+  </button>
+  <div id="destinosMenu" class="hidden absolute mt-4 w-64 bg-white text-black rounded-lg shadow-lg z-10">
+    <a href="#elchepe" class="block px-4 py-2 hover:bg-yellow-100 border-b">El Chepe</a>
+    <a href="#riviera" class="block px-4 py-2 hover:bg-yellow-100 border-b">Riviera Maya</a>
+    <!--<a href="#otros" class="block px-4 py-2 hover:bg-yellow-100 border-b">Otros</a>
+    <a href="#internacional" class="block px-4 py-2 hover:bg-yellow-100 border-b">Internacional</a>
+    <a href="#lujo" class="block px-4 py-2 hover:bg-yellow-100 border-b">Lujo</a>
+    <a href="#familiar" class="block px-4 py-2 hover:bg-yellow-100">Familiar</a>-->
+  </div>
+</div>
+
+<!-- SECCIONES EL CHEPE Y RIVIERA MAYA -->
+<section id="elchepe" class="bg-white text-black py-10 px-6" data-aos="fade-up">
   <div class="max-w-6xl mx-auto">
-    <h2 class="text-2xl sm:text-3xl font-bold mb-6">Riviera Maya: Playa, Cultura y Diversión - Noviembre 2025</h2>
+    <h2 class="text-3xl font-bold mb-6">Chihuahua: Aventura de Lujo en las Barrancas del Cobre</h2>
     <div class="grid md:grid-cols-2 gap-6">
+      <img src="imagenes/chihuahua.jpg" alt="Tren Chepe" class="rounded-lg shadow-md">
       <div>
-        <img src="imagenes/rivieramaya.jpg" alt="Riviera Maya" class="rounded-lg shadow-md">
-      </div>
-      <div>
-        <p class="mb-4"><strong>Destino:</strong> Riviera Maya (Cancún y Playa del Carmen), combinando naturaleza, historia maya y parques temáticos.</p>
-        <p class="mb-4"><strong>Incluye:</strong></p>
+        <p class="mb-4"><strong>Destino:</strong> Las majestuosas sierras naturales de México...</p>
+        <p class="mb-2"><strong>Incluye:</strong></p>
         <ul class="list-disc list-inside mb-4">
-          <li>Vuelos redondos CDMX - Cancún</li>
-          <li>4 noches en hotel 4★ Todo Incluido</li>
-          <li>Traslados aeropuerto-hotel</li>
-          <li>Opción de tours: Isla Mujeres, Tulum y Coba, Xcaret/Xel-Ha/Xplor</li>
+          <li>Vuelos en línea</li><li>Tren Chepe Express...</li><li>4 noches...</li>
         </ul>
-        <p class="mb-4"><strong>Itinerario sugerido:</strong></p>
+        <p class="mb-2"><strong>Itinerario:</strong></p>
         <ul class="list-disc list-inside">
-          <li><strong>Día 1:</strong> Llegada a Cancún, traslado al hotel y tarde libre</li>
-          <li><strong>Día 2:</strong> Tour a Isla Mujeres + snorkel</li>
-          <li><strong>Día 3:</strong> Visita a Tulum y Coba + cenote</li>
-          <li><strong>Día 4:</strong> Día libre o visita a parque ecológico</li>
-          <li><strong>Día 5:</strong> Check-out y regreso a CDMX</li>
+          <li><strong>Día 1:</strong> Vuelo a Chihuahua...</li>
         </ul>
-        <p class="mt-4"><strong>Costo estimado:</strong> $13,000 MXN (sin opcionales) - $17,500 MXN (con opcionales)</p>
+        <p class="mt-4"><strong>Costo estimado:</strong> $19,500 MXN + $3,500 MXN</p>
       </div>
+    </div>
+    <div class="mt-8 flex flex-col sm:flex-row gap-4 justify-center items-center relative">
+      <div class="relative">
+        <button id="btnMasDestinos" class="bg-yellow-400 text-black font-semibold px-6 py-2 rounded-full hover:bg-yellow-500 transition">
+          Más destinos
+        </button>
+        <div id="menuMasDestinos" class="hidden absolute left-0 mt-2 w-64 bg-white text-black rounded-lg shadow-lg z-10">
+          <a href="#riviera" class="block px-4 py-2 hover:bg-yellow-100 border-b">Riviera Maya</a>
+          <a href="#internacional" class="block px-4 py-2 hover:bg-yellow-100 border-b">Internacional</a>
+          <a href="#lujo" class="block px-4 py-2 hover:bg-yellow-100 border-b">Lujo</a>
+          <a href="#familiar" class="block px-4 py-2 hover:bg-yellow-100 border-b">Familiar</a>
+          <a href="#otros" class="block px-4 py-2 hover:bg-yellow-100">Otros</a>
+        </div>
+      </div>
+      <a href="chepe-detalle.html" class="bg-black text-white border border-white font-semibold px-6 py-2 rounded-full hover:bg-gray-800 transition">Más información</a>
     </div>
   </div>
 </section>
 
+<section id="riviera" class="bg-white text-black py-10 px-6" data-aos="fade-up">
+  <div class="max-w-6xl mx-auto">
+    <h2 class="text-3xl font-bold mb-6">Riviera Maya: Playa, Cultura y Diversión</h2>
+    <div class="grid md:grid-cols-2 gap-6">
+      <img src="imagenes/rivieramaya.jpg" alt="Riviera Maya" class="rounded-lg shadow-md">
+      <div>
+        <p class="mb-4"><strong>Destino:</strong> Cancún y Playa del Carmen...</p>
+        <p class="mb-2"><strong>Incluye:</strong></p>
+        <ul class="list-disc list-inside mb-4"><li>Vuelos redondos...</li></ul>
+        <p class="mb-2"><strong>Itinerario sugerido:</strong></p>
+        <ul class="list-disc list-inside"><li><strong>Día 1:</strong> Llegada...</li></ul>
+        <p class="mt-4"><strong>Costo estimado:</strong> $13,000 - $17,500 MXN</p>
+      </div>
+    </div>
+    <div class="mt-8 flex flex-col sm:flex-row gap-4 justify-center items-center relative">
+      <div class="relative">
+        <button id="btnMasDestinosRiviera" class="bg-yellow-400 text-black font-semibold px-6 py-2 rounded-full hover:bg-yellow-500 transition">
+          Más destinos
+        </button>
+        <div id="menuMasDestinosRiviera" class="hidden absolute left-0 mt-2 w-64 bg-white text-black rounded-lg shadow-lg z-10">
+          <a href="#elchepe" class="block px-4 py-2 hover:bg-yellow-100 border-b">El Chepe</a>
+          <a href="#internacional" class="block px-4 py-2 hover:bg-yellow-100 border-b">Internacional</a>
+          <a href="#lujo" class="block px-4 py-2 hover:bg-yellow-100 border-b">Lujo</a>
+          <a href="#familiar" class="block px-4 py-2 hover:bg-yellow-100 border-b">Familiar</a>
+          <a href="#otros" class="block px-4 py-2 hover:bg-yellow-100">Otros</a>
+        </div>
+      </div>
+      <a href="riviera-detalle.html" class="bg-black text-white border border-white font-semibold px-6 py-2 rounded-full hover:bg-gray-800 transition">Más información</a>
+    </div>
+  </div>
+</section>
 
-  <!-- Secciones futuras -->
-  <section id="internacional" class="py-12 px-6 text-center">
-    <h2 class="text-2xl font-bold mb-4">Internacional</h2>
-    <p>Próximamente...</p>
-  </section>
+<!-- FOOTER Y SCRIPTS -->
+<div class="text-center py-10">
+  <a href="index.html" class="bg-gray-800 hover:bg-gray-700 text-white px-6 py-2 rounded-full text-sm font-semibold shadow-md transition">← Volver al inicio</a>
+</div>
+<footer class="text-center text-sm text-gray-400 py-6 bg-black">&copy; 2025 Metzli Viajes</footer>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init({ duration: 1000, once: true });
+  const explorarBtn = document.getElementById('explorarBtn');
+  const destinosMenu = document.getElementById('destinosMenu');
+  explorarBtn.addEventListener('click', () => {
+    destinosMenu.classList.toggle('hidden');
+  });
+  document.addEventListener('click', (e) => {
+    if (!explorarBtn.contains(e.target) && !destinosMenu.contains(e.target)) {
+      destinosMenu.classList.add('hidden');
+    }
+  });
 
-  <section id="lujo" class="py-12 px-6 text-center">
-    <h2 class="text-2xl font-bold mb-4">Lujo</h2>
-    <p>Próximamente...</p>
-  </section>
+  const toggleMenu = (btnId, menuId) => {
+    const btn = document.getElementById(btnId);
+    const menu = document.getElementById(menuId);
+    btn.addEventListener('click', () => menu.classList.toggle('hidden'));
+    document.addEventListener('click', (e) => {
+      if (!btn.contains(e.target) && !menu.contains(e.target)) {
+        menu.classList.add('hidden');
+      }
+    });
+  };
 
-  <section id="familiar" class="py-12 px-6 text-center">
-    <h2 class="text-2xl font-bold mb-4">Familiar</h2>
-    <p>Próximamente...</p>
-  </section>
-
+  toggleMenu('btnMasDestinos', 'menuMasDestinos');
+  toggleMenu('btnMasDestinosRiviera', 'menuMasDestinosRiviera');
+</script>
 </body>
 </html>
