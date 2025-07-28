@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>El Chepe - Detalle</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <script src="https://unpkg.com/feather-icons"></script>
+  <style>
+    .scrollable-content {
+      max-height: 100vh;
+      overflow-y: auto;
+    }
+  </style>
+</head>
+<body class="bg-white text-black">
+
+<!-- NAVBAR -->
+<header class="bg-black text-white px-4 py-3 shadow-md sticky top-0 z-50">
+  <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-4 sm:gap-8">
+    <div class="flex items-center gap-4">
+      <img src="imagenes/logo.jpeg" alt="Logo Metzli" class="h-16 w-auto object-contain">
+      <span class="text-lg font-bold tracking-wide uppercase">Metzli Viajes</span>
+    </div>
+    <div class="flex gap-4 text-sm font-medium">
+      <a href="index.html" class="hover:text-yellow-400 transition">Inicio</a>
+      <a href="destinos.html" class="hover:text-yellow-400 transition">Destinos</a>
+      <a href="contacto.html" class="hover:text-yellow-400 transition">Contacto</a>
+    </div>
+  </div>
+</header>
+
+<!-- CONTENIDO PRINCIPAL -->
+<div class="flex flex-col md:flex-row h-screen">
+  <!-- Imagen con icono de zoom -->
+  <div class="md:w-1/2 w-full h-64 md:h-full relative group">
+    <img src="imagenes/chihuahua.jpg" alt="El Chepe" id="trenImagen" class="object-cover w-full h-full sticky top-0 z-10" />
+    <button id="zoomBtn" class="absolute bottom-4 right-4 bg-black bg-opacity-60 p-2 rounded-full text-white z-20 hover:bg-opacity-80 transition">
+      <i data-feather="zoom-in"></i>
+    </button>
+  </div>
+
+  <!-- Detalles del tour -->
+  <div class="md:w-1/2 w-full p-6 scrollable-content">
+    <h1 class="text-3xl font-bold mb-4">¡El Chepe: Una travesía por las Barrancas del Cobre!</h1>
+    <p class="mb-4">Explora las maravillas del norte de México con El Chepe...</p>
+
+    <h2 class="text-xl font-semibold mt-6 mb-2">INCLUYE</h2>
+    <ul class="list-disc list-inside mb-6 space-y-1">
+      
+      <li>Vuelos redondos (1 maleta de 10kg y 1 artículo personal).</li>
+      <li>Traslado a bordo de El Chepe Express (clase turista)</li>
+      <li>5 días, 4 noches de hospedaje</li>
+      <li>04 desayunos incluidos.</li>
+      <li>10 destinos incluidos</li>
+      <li>Entrada a centro menonita</li>
+      <li>Entrada a Valle de los Hongos y las Ranas</li>
+      <li>Entrada a Parque Aventura</li>
+      <li>Todos los traslados. Guía certificado. Coordinador. Seguro de viaje. Asistencia en línea.</li>
+    </ul>
+
+    <h2 class="text-xl font-semibold mb-2">VISITAMOS</h2>
+    <p class="mb-4">Chihuahua, Parque Aventura, El Fuerte, Divisadero, Centro Menonita, Creel, Lago Arareco, Valle de los Hongos, Valle de las Ranas, Topolobampo.</p>
+
+    <h2 class="text-xl font-semibold mb-2">FECHAS</h2>
+    <ul class="list-disc list-inside mb-6">
+      <li>20-25 de marzo del 2025</li>
+      <li>22-27 de abril del 2025</li>
+      <li>22-27 de mayo del 2025</li>
+      <li>19-24 de junio del 2025</li>
+      <li>24-29 de junio del 2025</li>
+      <li>Viaja en la fecha de tu preferencia</li>
+    </ul>
+
+    <h2 class="text-xl font-semibold mb-2">ITINERARIO</h2>
+    <p class="mb-4"><strong>DÍA 01:</strong> Vuelo a Aeropueto de Chihuahua, visita a la Catedral Metropolitana y la Plaza de Armas. Llegada al hotel.</p>
+    <p class="mb-4"><strong>DÍA 02:</strong> Desayuno.Tour por el centro histórico.Traslado a la estación del tren el Chepe</p>
+    <p class="mb-4"><strong>DÍA 03:</strong> Viaje en El Chepe hacia Divisadero. Noche en hotel con vistas panorámicas.</p>
+    <p class="mb-4"><strong>DÍA 04:</strong> Parque Barrancas, teleférico opcional. Recorrido por Creel y visita a Valle de los Hongos, Ranas y Lago Arareco.</p>
+    <p class="mb-4"><strong>DÍA 05:</strong> Comunidad menonita y traslado a Chihuahua.</p>
+    <p class="mb-6"><strong>DÍA 06:</strong> Vuelo de regreso desde Chihuahua.</p>
+
+    <h2 class="text-xl font-semibold mb-2">TARIFAS</h2>
+    <table class="w-full text-left mb-6 border">
+      <thead>
+        <tr class="bg-gray-200 text-black">
+          <th class="p-2">Habitación</th>
+          <th class="p-2">Precio</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td class="p-2">Individual</td><td class="p-2">$24,500</td></tr>
+        <tr><td class="p-2">Doble</td><td class="p-2">$22,100</td></tr>
+        <tr><td class="p-2">Triple</td><td class="p-2">$21,300</td></tr>
+        <tr><td class="p-2">Cuádruple</td><td class="p-2">$20,500</td></tr>
+        <tr><td class="p-2">Menor de 10</td><td class="p-2">$15,700</td></tr>
+      </tbody>
+    </table>
+    <p class="mb-4">*Precios para clase turista. Consulta por ascensos.</p>
+
+    <h2 class="text-xl font-semibold mb-2">RESERVA</h2>
+    <p class="mb-4">Reservación $3,000 por persona. El resto hasta 20 días antes. Métodos de pago: efectivo, tarjeta, Oxxo, Santander, transferencia, en línea.</p>
+
+    <h2 class="text-xl font-semibold mb-2">ACTIVIDADES ADICIONALES</h2>
+    <ul class="list-disc list-inside mb-8">
+      <li>Museo El Fuerte: $20</li>
+      <li>Teleférico en Divisadero: $300</li>
+      <li>Tirolesa más larga del mundo: $1,000</li>
+      <li>Bosque Aéreo: $300</li>
+      <li>Turibus en Chihuahua: $300</li>
+      <li>Paseo en lancha en Topolobampo: $350</li>
+    </ul>
+
+    <a href="destinos.html" class="inline-block bg-yellow-400 text-black px-6 py-2 rounded-full font-semibold hover:bg-yellow-500 transition">← Volver a destinos</a>
+  </div>
+</div>
+
+<!-- Modal de Zoom con animación -->
+<div id="modalZoom" class="fixed inset-0 bg-black bg-opacity-90 hidden items-center justify-center z-50 transition-opacity duration-300 opacity-0 pointer-events-none">
+  <div class="relative max-w-4xl w-full px-4 scale-95 transition-transform duration-300 transform" id="modalContent">
+    <button id="cerrarZoom" class="absolute top-4 right-4 bg-white text-black rounded-full p-2 hover:bg-gray-300 transition z-50">
+      <i data-feather="x"></i>
+    </button>
+    <img src="imagenes/chihuahua.jpg" alt="Zoom Tren Chepe" class="w-full max-h-[90vh] object-contain rounded shadow-lg">
+  </div>
+</div>
+
+<!-- Script Feather + Zoom animado -->
+<script>
+  feather.replace();
+
+  const zoomBtn = document.getElementById('zoomBtn');
+  const modalZoom = document.getElementById('modalZoom');
+  const modalContent = document.getElementById('modalContent');
+  const cerrarZoom = document.getElementById('cerrarZoom');
+
+  function abrirModal() {
+    modalZoom.classList.remove('hidden', 'pointer-events-none', 'opacity-0');
+    setTimeout(() => {
+      modalZoom.classList.add('flex', 'opacity-100');
+      modalContent.classList.remove('scale-95');
+      modalContent.classList.add('scale-100');
+    }, 10);
+  }
+
+  function cerrarModal() {
+    modalZoom.classList.remove('opacity-100');
+    modalZoom.classList.add('opacity-0');
+    modalContent.classList.remove('scale-100');
+    modalContent.classList.add('scale-95');
+    setTimeout(() => {
+      modalZoom.classList.remove('flex');
+      modalZoom.classList.add('hidden', 'pointer-events-none');
+    }, 300);
+  }
+
+  zoomBtn.addEventListener('click', abrirModal);
+  cerrarZoom.addEventListener('click', cerrarModal);
+  modalZoom.addEventListener('click', (e) => {
+    if (e.target === modalZoom) cerrarModal();
+  });
+</script>
+
+</body>
+</html>
