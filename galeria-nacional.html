@@ -1,125 +1,206 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Galería Nacional - Metzli Viajes</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>
+   Galer&iacute;a Nacional - Metzli Viajes
+  </title>
+  <script src="https://cdn.tailwindcss.com">
+  </script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet"/>
+  <link href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" rel="stylesheet"/>
   <style>
-    body {
+   body {
       font-family: 'Georgia', serif;
     }
   </style>
-</head>
-<body class="bg-black text-white">
-
+ </head>
+ <body class="bg-black text-white">
   <!-- NAV -->
   <nav class="bg-black bg-opacity-90 px-4 py-4 sm:px-6 relative">
-    <div class="flex items-center justify-between">
-      <!-- Logo -->
-      <div class="w-24">
-        <img src="imagenes/logo.jpeg" alt="Metzli Viajes" class="w-full h-auto object-contain" />
-      </div>
-
-      <!-- Botón hamburguesa -->
-      <button id="menu-btn" class="sm:hidden text-white text-2xl focus:outline-none">
-        <i class="fas fa-bars"></i>
-      </button>
-
-      <!-- Menú escritorio -->
-      <div class="hidden sm:flex space-x-6 text-sm font-semibold uppercase">
-        <a href="index.html" class="hover:text-yellow-400">Inicio</a>
-        <a href="destinos.html" class="hover:text-yellow-400">Destinos</a>
-        <a href="#" id="galeria-btn" class="hover:text-yellow-400">Galería</a>
-        <a href="contacto.html" class="hover:text-yellow-400">Contacto</a>
-      </div>
+   <div class="flex items-center justify-between">
+    <!-- Logo -->
+    <div class="w-24">
+     <img alt="Metzli Viajes" class="w-full h-auto object-contain" src="imagenes/logo.jpeg"/>
     </div>
-
-    <!-- Menú móvil -->
-    <div id="mobile-menu" class="hidden sm:hidden mt-4 flex flex-col space-y-3 text-center text-sm font-semibold uppercase">
-      <a href="index.html" class="hover:text-yellow-400">Inicio</a>
-      <a href="destinos.html" class="hover:text-yellow-400">Destinos</a>
-      <a href="#" id="galeria-btn-m" class="hover:text-yellow-400">Galería</a>
-      <a href="contacto.html" class="hover:text-yellow-400">Contacto</a>
+    <!-- Botón hamburguesa -->
+    <button class="sm:hidden text-white text-2xl focus:outline-none" id="menu-btn">
+     <i class="fas fa-bars">
+     </i>
+    </button>
+    <!-- Menú escritorio -->
+    <div class="hidden sm:flex space-x-6 text-sm font-semibold uppercase">
+     <a class="hover:text-yellow-400" href="index.html">
+      Inicio
+     </a>
+     <a class="hover:text-yellow-400" href="destinos.html">
+      Destinos
+     </a>
+     <a class="hover:text-yellow-400" href="#" id="galeria-btn">
+      Galer&iacute;a
+     </a>
+     <a class="hover:text-yellow-400" href="contacto.html">
+      Contacto
+     </a>
     </div>
+   </div>
+   <!-- Menú móvil -->
+   <div class="hidden sm:hidden mt-4 flex flex-col space-y-3 text-center text-sm font-semibold uppercase" id="mobile-menu">
+    <a class="hover:text-yellow-400" href="index.html">
+     Inicio
+    </a>
+    <a class="hover:text-yellow-400" href="destinos.html">
+     Destinos
+    </a>
+    <a class="hover:text-yellow-400" href="#" id="galeria-btn-m">
+     Galer&iacute;a
+    </a>
+    <a class="hover:text-yellow-400" href="contacto.html">
+     Contacto
+    </a>
+   </div>
   </nav>
-
   <!-- ENCABEZADO DE LA GALERÍA -->
   <header class="py-6 text-center bg-yellow-600 text-black">
-    <h1 class="text-3xl font-bold">Galería Nacional</h1>
-    <p class="text-sm mt-1">Descubre lo mejor de México</p>
+   <h1 class="text-3xl font-bold">
+    Galer&iacute;a Nacional
+   </h1>
+   <p class="text-sm mt-1">
+    Descubre lo mejor de M&eacute;xico
+   </p>
   </header>
-
   <!-- GALERÍA CON SWIPER -->
   <section class="py-12 px-4 sm:px-12">
-    <div class="swiper mySwiper">
-      <div class="swiper-wrapper">
-        <div class="swiper-slide"><img src="imagenes/rivieramaya.jpg" class="rounded-lg object-cover w-full h-60" /></div>
-        <div class="swiper-slide"><img src="imagenes/chihuahua.jpg" class="rounded-lg object-cover w-full h-60" /></div>
-        <div class="swiper-slide"><img src="imagenes/imagen4.jpg" class="rounded-lg object-cover w-full h-60" /></div>
-        <div class="swiper-slide"><img src="imagenes/riveramaya1.jpg" class="rounded-lg object-cover w-full h-60" /></div>
-        <div class="swiper-slide"><img src="imagenes/riveramaya2.jpg" class="rounded-lg object-cover w-full h-60" /></div>
-        <div class="swiper-slide"><img src="imagenes/riveramaya3.jpg" class="rounded-lg object-cover w-full h-60" /></div>
-        <div class="swiper-slide"><img src="imagenes/riveramaya4.jpg" class="rounded-lg object-cover w-full h-60" /></div>
-        <div class="swiper-slide"><img src="imagenes/riveramaya5.jpg" class="rounded-lg object-cover w-full h-60" /></div>
-        <div class="swiper-slide"><img src="imagenes/riveramaya6.jpg" class="rounded-lg object-cover w-full h-60" /></div>
-        <div class="swiper-slide"><img src="imagenes/riveramaya7.jpg" class="rounded-lg object-cover w-full h-60" /></div>
-        <div class="swiper-slide"><img src="imagenes/riveramaya8.jpg" class="rounded-lg object-cover w-full h-60" /></div>
-        <div class="swiper-slide"><img src="imagenes/riveramaya9.jpg" class="rounded-lg object-cover w-full h-60" /></div>
-        <div class="swiper-slide"><img src="imagenes/riveramaya10.jpg" class="rounded-lg object-cover w-full h-60" /></div>
-      </div>
-      <!-- PUNTOS DE NAVEGACIÓN -->
-      <div class="swiper-pagination mt-4"></div>
+   <div class="swiper mySwiper">
+    <div class="swiper-wrapper">
+     <div class="swiper-slide flex items-center justify-center h-[400px] bg-black">
+      <img class="object-contain max-h-full" src="imagenes/rivieramaya.jpg"/>
+     </div>
+     <div class="swiper-slide flex items-center justify-center h-[400px] bg-black">
+      <img class="object-contain max-h-full" src="imagenes/chihuahua.jpg"/>
+     </div>
+     <div class="swiper-slide flex items-center justify-center h-[400px] bg-black">
+      <img class="object-contain max-h-full" src="imagenes/imagen4.jpg"/>
+     </div>
+     <div class="swiper-slide flex items-center justify-center h-[400px] bg-black">
+      <img class="object-contain max-h-full" src="imagenes/imagen12.jpeg"/>
+     </div>
+     <div class="swiper-slide flex items-center justify-center h-[400px] bg-black">
+      <img class="object-contain max-h-full" src="imagenes/imagen8.jpeg"/>
+     </div>
+     <div class="swiper-slide flex items-center justify-center h-[400px] bg-black">
+      <img class="object-contain max-h-full" src="imagenes/imagen9.jpeg"/>
+     </div>
+     <div class="swiper-slide flex items-center justify-center h-[400px] bg-black">
+      <img class="object-contain max-h-full" src="imagenes/imagen10.jpeg"/>
+     </div>
+     <div class="swiper-slide flex items-center justify-center h-[400px] bg-black">
+      <img class="object-contain max-h-full" src="imagenes/imagen11.jpeg"/>
+     </div>    
+     <div class="swiper-slide flex items-center justify-center h-[400px] bg-black">
+      <img class="object-contain max-h-full" src="imagenes/riveramaya1.jpg"/>
+     </div>
+     <div class="swiper-slide flex items-center justify-center h-[400px] bg-black">
+      <img class="object-contain max-h-full" src="imagenes/riveramaya2.jpg"/>
+     </div>
+     <div class="swiper-slide flex items-center justify-center h-[400px] bg-black">
+      <img class="object-contain max-h-full" src="imagenes/riveramaya3.jpg"/>
+     </div>
+     <div class="swiper-slide flex items-center justify-center h-[400px] bg-black">
+      <img class="object-contain max-h-full" src="imagenes/riveramaya4.jpg"/>
+     </div>
+     <div class="swiper-slide flex items-center justify-center h-[400px] bg-black">
+      <img class="object-contain max-h-full" src="imagenes/riveramaya5.jpg"/>
+     </div>
+     <div class="swiper-slide flex items-center justify-center h-[400px] bg-black">
+      <img class="object-contain max-h-full" src="imagenes/imagen7.jpeg"/>
+     </div>
+     <div class="swiper-slide flex items-center justify-center h-[400px] bg-black">
+      <img class="object-contain max-h-full" src="imagenes/imagen7.jpeg"/>
+     </div>
+     <div class="swiper-slide flex items-center justify-center h-[400px] bg-black">
+      <img class="object-contain max-h-full" src="imagenes/riveramaya6.jpg"/>
+     </div>
+     <div class="swiper-slide flex items-center justify-center h-[400px] bg-black">
+      <img class="object-contain max-h-full" src="imagenes/riveramaya7.jpg"/>
+     </div>
+     <div class="swiper-slide flex items-center justify-center h-[400px] bg-black">
+      <img class="object-contain max-h-full" src="imagenes/riveramaya8.jpg"/>
+     </div>
+     <div class="swiper-slide flex items-center justify-center h-[400px] bg-black">
+      <img class="object-contain max-h-full" src="imagenes/riveramaya9.jpg"/>
+     </div>
+     <div class="swiper-slide flex items-center justify-center h-[400px] bg-black">
+      <img class="object-contain max-h-full" src="imagenes/riveramaya10.jpg"/>
+     </div>
     </div>
+    <!-- PUNTOS DE NAVEGACIÓN -->
+    <div class="swiper-pagination mt-4">
+    </div>
+   </div>
   </section>
-
   <!-- BOTONES DE ACCIÓN -->
-<div class="text-center py-6 space-y-4">
-  <a href="index.html" class="inline-block px-6 py-2 bg-yellow-500 text-black rounded-full hover:bg-yellow-400 transition">
+  <div class="text-center py-6 space-y-4">
+   <a class="inline-block px-6 py-2 bg-yellow-500 text-black rounded-full hover:bg-yellow-400 transition" href="index.html">
     Volver al inicio
-  </a>
-  <br />
-  <a href="reservar.html" class="inline-block px-6 py-2 bg-green-500 text-white rounded-full hover:bg-green-400 transition">
+   </a>
+   <br/>
+   <a class="inline-block px-6 py-2 bg-green-500 text-white rounded-full hover:bg-green-400 transition" href="contacto.html">
     Reservar
-  </a>
-</div>
-
-
-  <!-- MODAL GALERÍA -->
-  <div id="galeria-modal" class="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center z-50 hidden">
-    <div class="bg-white text-black rounded-xl p-4 max-w-sm w-full text-center space-y-4">
-      <h3 class="text-2xl font-bold text-yellow-600">Galería</h3>
-      <div class="flex flex-col items-center gap-3 text-lg">
-        <a href="galeria-nacional.html" class="flex items-center gap-2 hover:text-yellow-600">
-          <i class="fas fa-map-marker-alt text-yellow-600"></i><span>Nacional</span>
-        </a>
-        <a href="galeria-internacional.html" class="flex items-center gap-2 hover:text-yellow-600">
-          <i class="fas fa-globe-americas text-yellow-600"></i><span>Internacional</span>
-        </a>
-        <a href="galeria-lujo.html" class="flex items-center gap-2 hover:text-yellow-600">
-          <i class="fas fa-gem text-yellow-600"></i><span>Lujo</span>
-        </a>
-        <a href="galeria-familiar.html" class="flex items-center gap-2 hover:text-yellow-600">
-          <i class="fas fa-users text-yellow-600"></i><span>Familiar</span>
-        </a>
-      </div>
-      <button id="cerrar-modal" class="mt-4 text-sm text-red-600 hover:underline">Cerrar</button>
-    </div>
+   </a>
   </div>
-
+  <!-- MODAL GALERÍA -->
+  <div class="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center z-50 hidden" id="galeria-modal">
+   <div class="bg-white text-black rounded-xl p-4 max-w-sm w-full text-center space-y-4">
+    <h3 class="text-2xl font-bold text-yellow-600">
+     Galer&iacute;a
+    </h3>
+    <div class="flex flex-col items-center gap-3 text-lg">
+     <a class="flex items-center gap-2 hover:text-yellow-600" href="galeria-nacional.html">
+      <i class="fas fa-map-marker-alt text-yellow-600">
+      </i>
+      <span>
+       Nacional
+      </span>
+     </a>
+     <a class="flex items-center gap-2 hover:text-yellow-600" href="galeria-internacional.html">
+      <i class="fas fa-globe-americas text-yellow-600">
+      </i>
+      <span>
+       Internacional
+      </span>
+     </a>
+     <a class="flex items-center gap-2 hover:text-yellow-600" href="galeria-lujo.html">
+      <i class="fas fa-gem text-yellow-600">
+      </i>
+      <span>
+       Lujo
+      </span>
+     </a>
+     <a class="flex items-center gap-2 hover:text-yellow-600" href="galeria-familiar.html">
+      <i class="fas fa-users text-yellow-600">
+      </i>
+      <span>
+       Familiar
+      </span>
+     </a>
+    </div>
+    <button class="mt-4 text-sm text-red-600 hover:underline" id="cerrar-modal">
+     Cerrar
+    </button>
+   </div>
+  </div>
   <!-- FOOTER -->
   <footer class="text-center text-sm text-gray-400 py-4 bg-black border-t border-gray-700">
-    &copy; 2025 Metzli Viajes. Todos los derechos reservados.
+   &copy; 2025 Metzli Viajes. Todos los derechos reservados.
   </footer>
-
   <!-- LIBRERÍA SWIPER -->
-  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js">
+  </script>
   <!-- SCRIPTS -->
   <script>
-    // Menú hamburguesa
+   // Menú hamburguesa
     const menuBtn = document.getElementById('menu-btn');
     const mobileMenu = document.getElementById('mobile-menu');
     menuBtn?.addEventListener('click', () => {
@@ -162,6 +243,5 @@
       },
     });
   </script>
-
-</body>
+ </body>
 </html>
