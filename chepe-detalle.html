@@ -11,6 +11,27 @@
       max-height: 100vh;
       overflow-y: auto;
     }
+    .whatsapp-btn {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #25D366;
+      color: white;
+      border-radius: 50%;
+      width: 60px;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 30px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+      z-index: 1000;
+      transition: transform 0.2s;
+    }
+    .whatsapp-btn:hover {
+      transform: scale(1.1);
+      background-color: #20b358;
+    }
   </style>
 </head>
 <body class="bg-white text-black">
@@ -31,101 +52,124 @@
 </header>
 
 <!-- CONTENIDO PRINCIPAL -->
-<div class="flex flex-col md:flex-row h-screen">
+<div class="flex flex-col lg:flex-row h-screen">
   <!-- Imagen con icono de zoom -->
-  <div class="md:w-1/2 w-full h-64 md:h-full relative group">
-    <img src="imagenes/chihuahua.jpg" alt="El Chepe" id="trenImagen" class="object-cover w-full h-full sticky top-0 z-10" />
+  <div class="lg:w-1/2 w-full h-64 lg:h-full relative group">
+    <img src="imagenes/chihuahua.jpg" alt="El Chepe" id="trenImagen" class="object-cover object-center w-full h-full lg:sticky lg:top-0 z-10" />
     <button id="zoomBtn" class="absolute bottom-4 right-4 bg-black bg-opacity-60 p-2 rounded-full text-white z-20 hover:bg-opacity-80 transition">
       <i data-feather="zoom-in"></i>
     </button>
   </div>
 
   <!-- Detalles del tour -->
-  <div class="md:w-1/2 w-full p-6 scrollable-content">
+  <div class="lg:w-1/2 w-full p-6 scrollable-content">
     <h1 class="text-3xl font-bold mb-4">¡El Chepe: Una travesía por las Barrancas del Cobre!</h1>
-    <p class="mb-4">Explora las maravillas del norte de México con El Chepe...</p>
+    <p class="mb-4">Explora las maravillas del norte de México con El Chepe, combinando historia, naturaleza y cultura en un recorrido inolvidable.</p>
 
     <h2 class="text-xl font-semibold mt-6 mb-2">INCLUYE</h2>
     <ul class="list-disc list-inside mb-6 space-y-1">
-      
       <li>Vuelos redondos (1 maleta de 10kg y 1 artículo personal).</li>
-      <li>Traslado a bordo de El Chepe Express (clase turista)</li>
-      <li>5 días, 4 noches de hospedaje</li>
-      <li>04 desayunos incluidos.</li>
-      <li>10 destinos incluidos</li>
-      <li>Entrada a centro menonita</li>
-      <li>Entrada a Valle de los Hongos y las Ranas</li>
-      <li>Entrada a Parque Aventura</li>
-      <li>Todos los traslados. Guía certificado. Coordinador. Seguro de viaje. Asistencia en línea.</li>
+      <li>Viaje en tren Chepe Express (tramo Creel - Divisadero).</li>
+      <li>5 días, 4 noches de hospedaje en hoteles seleccionados.</li>
+      <li>Desayunos incluidos.</li>
+      <li>Entradas a los principales atractivos mencionados en el itinerario.</li>
+      <li>Traslados terrestres.</li>
+      <li>Guía certificado y coordinador.</li>
+      <li>Seguro de viaje y asistencia en línea.</li>
     </ul>
 
     <h2 class="text-xl font-semibold mb-2">VISITAMOS</h2>
-    <p class="mb-4">Chihuahua, Parque Aventura, El Fuerte, Divisadero, Centro Menonita, Creel, Lago Arareco, Valle de los Hongos, Valle de las Ranas, Topolobampo.</p>
+    <p class="mb-4">Chihuahua (Menudería Las Campanas, Grutas Nombre de Dios, Quintas Carolinas, Museo de la Revolución, Calabozo de Miguel Hidalgo, Catedral Metropolitana), Creel (Lago Arareko, Valle de los Monjes, Cueva Tarahumara), Parque Barrancas (teleférico y miradores), Valle de los Hongos y Ranas, Misión de San Ignacio.</p>
 
     <h2 class="text-xl font-semibold mb-2">FECHAS</h2>
     <ul class="list-disc list-inside mb-6">
-      <li>20-25 de marzo del 2025</li>
-      <li>22-27 de abril del 2025</li>
-      <li>22-27 de mayo del 2025</li>
-      <li>19-24 de junio del 2025</li>
-      <li>24-29 de junio del 2025</li>
-      <li>Viaja en la fecha de tu preferencia</li>
+      <li>11-15 de noviembre del 2025</li>
+      <li>18-22 de noviembre del 2025</li>
     </ul>
 
     <h2 class="text-xl font-semibold mb-2">ITINERARIO</h2>
-    <p class="mb-4"><strong>DÍA 01:</strong> Vuelo a Aeropueto de Chihuahua, visita a la Catedral Metropolitana y la Plaza de Armas. Llegada al hotel.</p>
-    <p class="mb-4"><strong>DÍA 02:</strong> Desayuno.Tour por el centro histórico.Traslado a la estación del tren el Chepe</p>
-    <p class="mb-4"><strong>DÍA 03:</strong> Viaje en El Chepe hacia Divisadero. Noche en hotel con vistas panorámicas.</p>
-    <p class="mb-4"><strong>DÍA 04:</strong> Parque Barrancas, teleférico opcional. Recorrido por Creel y visita a Valle de los Hongos, Ranas y Lago Arareco.</p>
-    <p class="mb-4"><strong>DÍA 05:</strong> Comunidad menonita y traslado a Chihuahua.</p>
-    <p class="mb-6"><strong>DÍA 06:</strong> Vuelo de regreso desde Chihuahua.</p>
+    <div class="space-y-4">
+      <p><strong>DÍA 01:</strong> Llegada a Chihuahua, comida en restaurante tradicional, visita a Grutas Nombre de Dios, Quintas Carolinas y cafetería Los Cinco Panes. Hospedaje en Casa Grande Chihuahua.</p>
+      <p><strong>DÍA 02:</strong> Traslado a Creel. Visita al Lago Arareko, Valle de los Monjes y Cueva Tarahumara. Cena y noche en Hotel Posada del Cobre.</p>
+      <p><strong>DÍA 03:</strong> Viaje en tren Chepe a Divisadero. Recorrido por Parque Barrancas, teleférico y miradores, visita al Valle de los Hongos y Ranas, y Misión de San Ignacio. Hospedaje en Hotel Divisadero Barrancas.</p>
+      <p><strong>DÍA 04:</strong> Regreso a Chihuahua. Visita al Museo de la Revolución Mexicana. Hospedaje en Casa Grande Chihuahua.</p>
+      <p><strong>DÍA 05:</strong> Visita al Calabozo de Miguel Hidalgo y a la Catedral Metropolitana. Traslado al aeropuerto para vuelo de regreso.</p>
+    </div>
 
     <h2 class="text-xl font-semibold mb-2">TARIFAS</h2>
-    <table class="w-full text-left mb-6 border">
-      <thead>
-        <tr class="bg-gray-200 text-black">
-          <th class="p-2">Habitación</th>
-          <th class="p-2">Precio</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr><td class="p-2">Individual</td><td class="p-2">$24,500</td></tr>
-        <tr><td class="p-2">Doble</td><td class="p-2">$22,100</td></tr>
-        <tr><td class="p-2">Triple</td><td class="p-2">$21,300</td></tr>
-        <tr><td class="p-2">Cuádruple</td><td class="p-2">$20,500</td></tr>
-        <tr><td class="p-2">Menor de 10</td><td class="p-2">$15,700</td></tr>
-      </tbody>
-    </table>
+    <div class="overflow-x-auto">
+      <table class="w-full text-left mb-6 border">
+        <thead>
+          <tr class="bg-gray-200 text-black">
+            <th class="p-2">Habitación</th>
+            <th class="p-2">Precio</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td class="p-2">Individual</td><td class="p-2">$23,000</td></tr>
+          <tr><td class="p-2">Doble</td><td class="p-2">$22,000</td></tr>
+          <tr><td class="p-2">Triple</td><td class="p-2">$21,000</td></tr>
+          <tr><td class="p-2">Cuádruple</td><td class="p-2">$20,500</td></tr>
+          <tr><td class="p-2">Menor de 10</td><td class="p-2">$15,700</td></tr>
+        </tbody>
+      </table>
+    </div>
     <p class="mb-4">*Precios para clase turista. Consulta por ascensos.</p>
 
     <h2 class="text-xl font-semibold mb-2">RESERVA</h2>
-    <p class="mb-4">Reservación $3,000 por persona. El resto hasta 20 días antes. Métodos de pago: efectivo, tarjeta, Oxxo, Santander, transferencia, en línea.</p>
+    <p class="mb-4">Reservación $3,000 por persona. Completa tus datos y procede al pago en línea.</p>
 
-    <h2 class="text-xl font-semibold mb-2">ACTIVIDADES ADICIONALES</h2>
-    <ul class="list-disc list-inside mb-8">
-      <li>Museo El Fuerte: $20</li>
-      <li>Teleférico en Divisadero: $300</li>
-      <li>Tirolesa más larga del mundo: $1,000</li>
-      <li>Bosque Aéreo: $300</li>
-      <li>Turibus en Chihuahua: $300</li>
-      <li>Paseo en lancha en Topolobampo: $350</li>
-    </ul>
+    <!-- Formulario de reserva -->
+    <form id="reservaForm" action="https://formspree.io/f/mjkovrel" method="POST" class="space-y-4 bg-gray-100 p-4 rounded-lg shadow-md mb-6">
+      <div>
+        <label class="block text-sm font-medium">Nombre completo</label>
+        <input type="text" name="nombre" required class="w-full border p-2 rounded">
+      </div>
 
-    <a href="destinos.html" class="inline-block bg-yellow-400 text-black px-6 py-2 rounded-full font-semibold hover:bg-yellow-500 transition">← Volver a destinos</a>
+      <div>
+        <label class="block text-sm font-medium">Correo electrónico</label>
+        <input type="email" name="email" required class="w-full border p-2 rounded">
+      </div>
+
+      <div>
+        <label class="block text-sm font-medium">Fecha de viaje</label>
+        <select name="fecha" required class="w-full border p-2 rounded">
+          <option value="">Selecciona una fecha</option>
+          <option value="11-15 noviembre 2025">11-15 noviembre 2025</option>
+          <option value="18-22 noviembre 2025">18-22 noviembre 2025</option>
+        </select>
+      </div>
+
+      <button type="submit" class="bg-blue-600 text-white px-6 py-2 rounded-full font-semibold hover:bg-blue-700 transition">
+        Enviar reserva y pagar
+      </button>
+    </form>
+
+    <div class="flex gap-4">
+      <a href="destinos.html" class="inline-block bg-yellow-400 text-black px-6 py-2 rounded-full font-semibold hover:bg-yellow-500 transition">
+        ← Volver a destinos
+      </a>
+    </div>
+
   </div>
 </div>
 
-<!-- Modal de Zoom con animación -->
+<!-- Botón flotante WhatsApp -->
+<a href="https://wa.me/525523882513" target="_blank" class="whatsapp-btn" aria-label="WhatsApp">
+  <i data-feather="message-circle"></i>
+</a>
+
+<!-- Modal de Zoom -->
 <div id="modalZoom" class="fixed inset-0 bg-black bg-opacity-90 hidden items-center justify-center z-50 transition-opacity duration-300 opacity-0 pointer-events-none">
   <div class="relative max-w-4xl w-full px-4 scale-95 transition-transform duration-300 transform" id="modalContent">
     <button id="cerrarZoom" class="absolute top-4 right-4 bg-white text-black rounded-full p-2 hover:bg-gray-300 transition z-50">
       <i data-feather="x"></i>
     </button>
-    <img src="imagenes/chihuahua.jpg" alt="Zoom Tren Chepe" class="w-full max-h-[90vh] object-contain rounded shadow-lg">
+    <img src="imagenes/chihuahua.jpg" alt="Zoom Tren Chepe" class="w-full max-h-[90vh] object-cover object-center rounded shadow-lg">
   </div>
 </div>
 
-<!-- Script Feather + Zoom animado -->
+<!-- Script Feather + Zoom -->
 <script>
   feather.replace();
 
@@ -158,6 +202,25 @@
   cerrarZoom.addEventListener('click', cerrarModal);
   modalZoom.addEventListener('click', (e) => {
     if (e.target === modalZoom) cerrarModal();
+  });
+
+  document.getElementById("reservaForm").addEventListener("submit", function(e) {
+    e.preventDefault();
+    const form = e.target;
+
+    fetch(form.action, {
+      method: form.method,
+      body: new FormData(form),
+      headers: { 'Accept': 'application/json' }
+    }).then(response => {
+      if (response.ok) {
+        window.location.href = "https://link.mercadopago.com.mx/metzliviajes";
+      } else {
+        alert("Hubo un error al enviar la reserva. Intenta de nuevo.");
+      }
+    }).catch(error => {
+      alert("Error de conexión. Intenta de nuevo.");
+    });
   });
 </script>
 
