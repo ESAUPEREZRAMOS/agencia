@@ -64,6 +64,7 @@
   <!-- Detalles del tour -->
   <div class="lg:w-1/2 w-full p-6 scrollable-content">
     <h1 class="text-3xl font-bold mb-4">¡El Chepe: Una travesía por las Barrancas del Cobre!</h1>
+      <p id="temp-chihuahua" class="mb-4 text-lg font-semibold text-blue-600">Cargando temperatura de ..</p>
     <p class="mb-4">Explora las maravillas del norte de México con El Chepe, combinando historia, naturaleza y cultura en un recorrido inolvidable.</p>
 
     <h2 class="text-xl font-semibold mt-6 mb-2">INCLUYE</h2>
@@ -84,15 +85,17 @@
     <h2 class="text-xl font-semibold mb-2">FECHAS</h2>
     <ul class="list-disc list-inside mb-6">
       <li>11-15 de noviembre del 2025</li>
-      <li>18-22 de noviembre del 2025</li>
+      <li>25-29 de noviembre del 2025</li>
+      <li>09-13 de diciembre del 2025</li>
+        
     </ul>
 
     <h2 class="text-xl font-semibold mb-2">ITINERARIO</h2>
     <div class="space-y-4">
-      <p><strong>DÍA 01:</strong> Llegada a Chihuahua, comida en restaurante tradicional, visita a Grutas Nombre de Dios, Quintas Carolinas y cafetería Los Cinco Panes. Hospedaje en Casa Grande Chihuahua.</p>
-      <p><strong>DÍA 02:</strong> Traslado a Creel. Visita al Lago Arareko, Valle de los Monjes y Cueva Tarahumara. Cena y noche en Hotel Posada del Cobre.</p>
-      <p><strong>DÍA 03:</strong> Viaje en tren Chepe a Divisadero. Recorrido por Parque Barrancas, teleférico y miradores, visita al Valle de los Hongos y Ranas, y Misión de San Ignacio. Hospedaje en Hotel Divisadero Barrancas.</p>
-      <p><strong>DÍA 04:</strong> Regreso a Chihuahua. Visita al Museo de la Revolución Mexicana. Hospedaje en Casa Grande Chihuahua.</p>
+      <p><strong>DÍA 01:</strong> Llegada a Chihuahua, comida en restaurante tradicional, visita a Grutas Nombre de Dios, Quintas Carolinas y cafetería Los Cinco Panes. Hospedaje en Chihuahua.</p>
+      <p><strong>DÍA 02:</strong> Traslado a Creel. Visita al Lago Arareko, Valle de los Monjes y Cueva Tarahumara. Cena y noche en Hotel.</p>
+      <p><strong>DÍA 03:</strong> Viaje en tren Chepe a Divisadero. Recorrido por Parque Barrancas, teleférico y miradores, visita al Valle de los Hongos y Ranas, y Misión de San Ignacio. Hospedaje en Hotel Barrancas.</p>
+      <p><strong>DÍA 04:</strong> Regreso a Chihuahua. Visita al Museo de la Revolución Mexicana. Hospedaje Chihuahua.</p>
       <p><strong>DÍA 05:</strong> Visita al Calabozo de Miguel Hidalgo y a la Catedral Metropolitana. Traslado al aeropuerto para vuelo de regreso.</p>
     </div>
 
@@ -108,7 +111,9 @@
         <tbody>
           <tr><td class="p-2">Individual</td><td class="p-2">$23,000</td></tr>
           <tr><td class="p-2">Doble</td><td class="p-2">$22,000</td></tr>
-      
+           <!-- <tr><td class="p-2">Triple</td><td class="p-2">$21,000</td></tr>
+          <tr><td class="p-2">Cuádruple</td><td class="p-2">$20,500</td></tr>
+          <tr><td class="p-2">Menor de 10</td><td class="p-2">$15,700</td></tr>-->
         </tbody>
       </table>
     </div>
@@ -134,7 +139,10 @@
         <select name="fecha" required class="w-full border p-2 rounded">
           <option value="">Selecciona una fecha</option>
           <option value="11-15 noviembre 2025">11-15 noviembre 2025</option>
-          <option value="18-22 noviembre 2025">18-22 noviembre 2025</option>
+          <option value="18-22 noviembre 2025">25-29 noviembre 2025</option>
+    
+          <option value="18-22 noviembre 2025">9-13 diciembre 2025</option>
+            
         </select>
       </div>
 
@@ -220,6 +228,24 @@
       alert("Error de conexión. Intenta de nuevo.");
     });
   });
+</script>
+    <!-- Script para mostrar temperatura de Chihuahua -->
+<script>
+  const apiKey = "1593f2bb5c264ae9db4db3d5c9111aee"; // Reemplaza con tu API Key
+  const ciudad = "Chihuahua";
+  const url = `https://api.openweathermap.org/data/2.5/weather?q=${ciudad},MX&appid=${apiKey}&units=metric&lang=es`;
+
+  fetch(url)
+    .then(res => res.json())
+    .then(data => {
+      const temp = data.main.temp.toFixed(1);
+      document.getElementById("temp-chihuahua").textContent =
+        `Temperatura actual en Chihuahua: ${temp}°C`;
+    })
+    .catch(() => {
+      document.getElementById("temp-chihuahua").textContent =
+        "No se pudo obtener la temperatura de Chihuahua.";
+    });
 </script>
 
 </body>
