@@ -120,7 +120,7 @@
     <p class="mb-4">*Precios para clase turista. Consulta por ascensos.</p>
 
     <h2 class="text-xl font-semibold mb-2">RESERVA</h2>
-    <p class="mb-4">Reservación $3,000 por persona. Completa tus datos y procede al pago en línea.</p>
+    <p class="mb-4">Reservación $1,000 por persona. Completa tus datos y procede al pago en línea.</p>
 
     <!-- Formulario de reserva -->
     <form id="reservaForm" action="https://formspree.io/f/mjkovrel" method="POST" class="space-y-4 bg-gray-100 p-4 rounded-lg shadow-md mb-6">
@@ -220,7 +220,7 @@
       headers: { 'Accept': 'application/json' }
     }).then(response => {
       if (response.ok) {
-        window.location.href = "https://link.mercadopago.com.mx/metzliviajes";
+        window.location.href = "https://mpago.la/1QxxjMs";
       } else {
         alert("Hubo un error al enviar la reserva. Intenta de nuevo.");
       }
